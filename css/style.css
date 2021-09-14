@@ -31,7 +31,7 @@ html {
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 img {
@@ -84,18 +84,12 @@ header .container h2 {
 header .container p {
   color: var(--c-gry-bg-white);
   padding: 1.1625rem;
-  width: 36.25rem;
+  max-width: 36.25rem;
   line-height: 1.6;
   margin: 0 auto;
   text-transform: none;
 }
 
-@media (max-width:550px) {
-  header .container p {
-    width: 100%;
-    height: auto;
-  }
-}
 
 /* =========== */
 
@@ -103,6 +97,7 @@ main .container .parent {
   width: 32.5rem;
   height: 32.5rem;
   margin-inline: auto;
+  margin-bottom: 20px;
   position: relative;
 }
 
@@ -114,11 +109,6 @@ main .container .parent {
   }
 }
 
-@media (max-width:550px) {
-  main .container .parent {
-    width: 100%;
-  }
-}
 
 main .container .parent .box-img {
   height: 100%;
@@ -131,16 +121,6 @@ main .container .parent .box-img {
   -o-border-radius: 50%;
   overflow: hidden;
   position: relative;
-}
-
-@media (max-width:550px) {
-  main .container .parent .box-img {
-    border-radius: 10% 10%;
-    -webkit-border-radius: 10% 10%;
-    -moz-border-radius: 10% 10%;
-    -ms-border-radius: 10% 10%;
-    -o-border-radius: 10% 10%;
-  }
 }
 
 
@@ -164,7 +144,7 @@ main .container .parent .box-img::after {
 }
 
 main .container .parent .box-img .text {
-  width: 21.5375rem;
+  max-width: 80%;
   position: absolute;
   z-index: 9;
   top: 50%;
@@ -179,7 +159,7 @@ main .container .parent .box-img .text {
 
 @media (max-width:1050px) {
   main .container .parent .box-img .text {
-    width: 16rem;
+    width: 90%;
   }
 }
 
@@ -211,7 +191,7 @@ main .container .parent .box-img .text p {
   text-transform: none;
 }
 
-@media (max-width:1050px) {
+@media (max-width:600px) {
   main .container .parent .box-img .text p {
     font-size: .8125rem;
   }
@@ -232,12 +212,6 @@ main .container .parent .child {
   }
 }
 
-@media (max-width:550px) {
-  main .container .parent .child {
-    width: fit-content;
-  }
-}
-
 main .container .parent .child.red,
 main .container .parent .child.blue {
   top: 0;
@@ -249,14 +223,6 @@ main .container .parent .child.blue {
   main .container .parent .child.blue {
     top: -5rem;
     align-items: flex-end;
-  }
-}
-
-@media (max-width:550px) {
-
-  main .container .parent .child.red,
-  main .container .parent .child.blue {
-    top: -3rem;
   }
 }
 
@@ -291,13 +257,6 @@ main .container .parent .child.green {
   }
 }
 
-@media (max-width:550px) {
-
-  main .container .parent .child.yellow,
-  main .container .parent .child.green {
-    bottom: -3.5rem;
-  }
-}
 
 
 main .container .parent .child.yellow {
@@ -309,8 +268,6 @@ main .container .parent .child.yellow {
   -o-transform: translate(8.75rem, -1.25rem);
 }
 
-@media (max-width:1050px) {}
-
 main .container .parent .child.green {
   left: 100%;
   transform: translate(-8.75rem, -1.25rem);
@@ -320,15 +277,10 @@ main .container .parent .child.green {
   -o-transform: translate(-8.75rem, -1.25rem);
 }
 
-@media (max-width:1050px) {}
-
-@media (max-width:1050px) {}
-
 main .container .parent .child.reverse {
   flex-direction: row-reverse;
 }
 
-@media (max-width:1050px) {}
 
 main .container .parent .child .img-box img {
   width: 6.875rem;
@@ -355,12 +307,6 @@ main .container .parent .child.reverse .text {
   text-align: right;
 }
 
-@media (max-width:550px) {
-  main .container .parent .child .text {
-    display: none;
-  }
-}
-
 main .container .parent .child .text h4 {
   color: var(--c-black);
   margin-bottom: 1.5625rem;
@@ -373,4 +319,30 @@ main .container .parent .child .text p {
   color: var(--c-gry-bg-white);
   line-height: 1.4;
   font-size: .875rem;
+}
+
+@media(max-width: 600px) {
+
+  main .container .parent {
+    width: 90vw;
+    height: 90vw;
+  }
+
+
+  main .container .parent .child {
+    position: unset;
+    top: unset;
+    left: unset;
+    width: 100% !important;
+    transform: unset !important;
+    margin-block: 3.5rem;
+    -webkit-transform: unset !important;
+    -moz-transform: unset !important;
+    -ms-transform: unset !important;
+    -o-transform: unset !important;
+  }
+
+  main .container .parent .child:last-of-type {
+    padding-bottom: 2.5rem;
+  }
 }
